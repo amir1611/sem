@@ -1,4 +1,5 @@
-![FK-KIOSK MANAGEMENT SYSTEM]([https://lh3.google.com/u/0/d/1rv52Sqwg_5wQG2IFieLz8_O_XKoV1opU=w1920-h911-iv1](https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihaTiNM1CKq5FdqbEGfP5PXS1PdO724-DCTqU8KrQivwB3qd-zFJVglQz6V4a7WiWsPHXwfkljnZNQVxGo-0wZMoUPDNV3zok9g=w1920-h911-rw-v1))
+![FK-KIOSK MANAGEMENT SYSTEM](https://lh3.googleusercontent.com/u/0/drive-viewer/AKGpihaTiNM1CKq5FdqbEGfP5PXS1PdO724-DCTqU8KrQivwB3qd-zFJVglQz6V4a7WiWsPHXwfkljnZNQVxGo-0wZMoUPDNV3zok9g=w1920-h911-rw-v1)
+
 
 # FK-KIOSK MANAGEMENT SYSTEM
 ONLINE KIOSK MANAGEMENT SYSTEM FOR FACULTY OF COMPUTING, UMPSA
