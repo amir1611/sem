@@ -53,6 +53,7 @@ Developed and Deployed using Visual Studio Code, Laragon, Heidi SQL, Github.
 
 ## Programmer's
 - [@Amir](https://github.com/amir1611)
+- [@Afiq](https://github.com/Apikmmar)
 
 
 
