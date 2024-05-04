@@ -156,4 +156,11 @@ Route::prefix('fk-bursary')->name('bursary.')->group(function () {
           Route::get('/view-payment/{id}', [PaymentController::class, 'viewPayment'])->name('viewPayment');
           Route::post('/process-payment/{id}', [PaymentController::class, 'processPayment'])->name('processPayment');
     });
+<<<<<<< HEAD
 });
+=======
+});
+
+
+testing
+>>>>>>> 94e920e21b9c167f8641ab96a30229363a3d250a
