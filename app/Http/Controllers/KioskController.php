@@ -137,7 +137,8 @@ class KioskController extends Controller
                 'application_comment' => '',
             ]);
 
-           
+            // Save the application
+            $application->save();
 
             return view('manageKiosk.manageApplication.PendingApproval');
         } catch (\Throwable $th) {
