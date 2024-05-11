@@ -289,7 +289,7 @@ class PaymentController extends Controller
 
         // Update payment status and comment
         $payment->update([
-            'payment_status' => ($request->input('action') === 'approve') ? 'Approved' : 'Rejected',
+            // 'payment_status' => ($request->input('action') === 'approve') ? 'Approved' : 'Rejected',
             'payment_comment' => $request->input('payment_comment'),
         ]);
 
