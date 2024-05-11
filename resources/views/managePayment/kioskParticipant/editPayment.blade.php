@@ -62,7 +62,7 @@
                         </td>
                     </tr>
                 
-        <th class="profile-label"><strong>Payment Type</strong></th>
+        <th class="profile-label">Payment Type</th>
             <td>
              <select class="form-control profile-input" name="payment_type" id="payment_type">
                     <option value="KIOSK RENT" {{ old('payment_type', $payment->payment_type) === 'KIOSK RENT' ? 'selected' : '' }}>
@@ -76,7 +76,7 @@
         </tr>
 
                     <tr>
-                        <th class="profile-label"><i>Payment Amount</i> (RM)</th>
+                        <th class="profile-label">Payment Amount (RM)</th>
                         <td>
                             <input class="form-control profile-input" type="number" name="payment_amount"
                                 id="payment_amount"
@@ -84,7 +84,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th class="profile-label"><strong><i>Payment Date</i></strong></th>
+                        <th class="profile-label">Payment Date</th>
                         <td>
                             <input class="form-control profile-input" type="date" name="payment_date"
                                 id="payment_date"
