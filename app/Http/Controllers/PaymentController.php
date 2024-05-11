@@ -28,7 +28,50 @@ class PaymentController extends Controller
      */
 
    
-    
+     //To store payment
+    public function addPayment(Request $request)
+    {
+        try {
+
+            $request->validate([
+                'kiosk_id' => 'required|numeric',
+                'payment_type' => 'required|string',
+                'payment_amount' => 'required|numeric',
+                'payment_date' => 'required|date_format:Y-m-d',
+                'payment_receipt' => 'required|mimes:pdf|max:10240',
+            ]);
+
+            $payment_receipt = $request->file('payment_receipt')->storeAs('payments', 'receipt_' . time() . '.pdf', 'public');
+
+
+            // Fetch the  associated with the current user
+            $kiosk = Auth::user()->kiosk;
+
+            // Create a new payment with the kiosk_id
+            $payment = new payments([
+                'user_id' => Auth::id(),
+                'kiosk_id' => $request->input('kiosk_id'),
+                'payment_type' => $request->input('payment_type'),
+                'payment_amount' => $request->input('payment_amount'),
+                'payment_date' => $request->input('payment_date'),
+                'payment_receipt' => $payment_receipt,
+                'payment_status' => 'Pending',
+                'payment_comment' => '',
+             ]);
+
+            // Save the payment
+            $payment->save();
+
+            // You may add a success message or redirect to a success page
+            return view('managePayment.kioskParticipant.pendingApproval');
+
+            } catch (\Throwable $th) {
+           // Display error message along with the confirmation message
+            return view('error', [
+                'error' => $th->getMessage(),
+            ]);
+        }
+    }
 
 
 

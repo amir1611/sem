@@ -75,6 +75,7 @@ Route::prefix('user')->name('user.')->group(function () {
         // managePayment
         Route::get('/viewPaymentHistory', [PaymentController::class, 'viewPaymentHistory'])->name('viewPaymentHistory');
         Route::get('/addPayment', [PaymentController::class, 'showAddPaymentForm'])->name('addPayment');
+        Route::post('/addPayment', [PaymentController::class, 'addPayment'])->name('submitAddPayment');
         Route::get('/viewPaymentDetails/{id}', [PaymentController::class, 'viewPaymentDetails']);
         Route::get('/filter/{filterData}', [PaymentController::class, 'filterTable'])->name('filterSec');
         Route::get('/search', [PaymentController::class, 'searchPayment'])->name('searchPayment');
