@@ -19,6 +19,9 @@ class Complaint extends Model
       'business_name',
       'complaint_category',
       'complaint_information',
+      'complaint_justification',
+      'status',
+      'work_order',
     ];
 
 
