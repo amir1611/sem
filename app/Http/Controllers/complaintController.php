@@ -22,9 +22,6 @@ class complaintController extends Controller
             'business_name' => 'required|string',
             'complaint_category' => 'required|string',
             'complaint_information' => 'required|string',
-            // 'complaint_justification' => 'required|string',
-            // 'status' => 'required|string',
-            // 'work_order' => 'required|string',
         ]);
 
         // Assuming you have a Complaint model
