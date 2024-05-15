@@ -103,7 +103,8 @@
                     <p><b>Month</b></p>
                 </div>
 
-                <input type="month" class="w-100 form-control" id="monthPicker" value="$report->report_month"  name="monthPicker" />
+                <input type="month" class="w-100 form-control" id="monthPicker" value="{{ \Carbon\Carbon::parse($report->report_month)->format('Y-m') }}"  
+                name="monthPicker" />
 
             </div>
 

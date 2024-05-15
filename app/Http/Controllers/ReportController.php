@@ -136,8 +136,10 @@ class ReportController extends Controller
                     'revenue_Ringgit' => 'required|numeric',
                     'revenue_Sen' => 'required|numeric',
                     'optHours' => 'required|string',
-                    'remark' => 'required|string'
+                    'remark' => 'required|string',
+                    'monthPicker' => 'required|date_format:Y-m'
                 ]);
+                $reportMonth = $request->input('monthPicker') . '-01';
 
                 if ($request->hasFile('formFile') && $request->file('formFile')->isValid()) {
                     $file = $request->file('formFile');
@@ -146,7 +148,7 @@ class ReportController extends Controller
                     Report::where('id', $id)->update(
                         array(
                             'kiosk_id' => $request->input('kioskValue'),
-                            'report_month' => $request->input('monthPicker'),
+                            'report_month' => $reportMonth,                            
                             'report_monthly_revenue' => $request->input('revenue_Ringgit') + ($request->input('revenue_Sen') / 100),
                             'report_operating_hour' => $request->input('optHours'),
                             'report_remark' => $request->input('remark'),
@@ -158,7 +160,7 @@ class ReportController extends Controller
                     Report::where('id', $id)->update(
                         array(
                             'kiosk_id' => $request->input('kioskValue'),
-                            'report_month' => $request->input('monthPicker'),
+                            'report_month' => $reportMonth,                            
                             'report_monthly_revenue' => $request->input('revenue_Ringgit') + ($request->input('revenue_Sen') / 100),
                             'report_operating_hour' => $request->input('optHours'),
                             'report_remark' => $request->input('remark')
