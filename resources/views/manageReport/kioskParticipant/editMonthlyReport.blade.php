@@ -103,8 +103,8 @@
                     <p><b>Month</b></p>
                 </div>
 
-                <input type="date" class="w-100 form-control" id="datePicker" value="$report->report_month"  name="datePicker" />
-                
+                <input type="month" class="w-100 form-control" id="monthPicker" value="$report->report_month"  name="monthPicker" />
+
             </div>
 
             <hr class="border-0">
