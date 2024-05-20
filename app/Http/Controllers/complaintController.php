@@ -93,6 +93,7 @@ class complaintController extends Controller
         $complaint->business_name = $validatedData['business_name'];
         $complaint->complaint_category = $validatedData['complaint_category'];
         $complaint->complaint_information = $validatedData['complaint_information'];
+        $complaint->status = "Pending";
         $complaint->save();
 
         return redirect()->route('user.viewComplaint')->with('success', 'Complaint updated successfully');
