@@ -14,6 +14,9 @@ class CreateComplaintsTable extends Migration
             $table->string('business_name');
             $table->string('complaint_category');
             $table->text('complaint_information');
+            $table->string('complaint_justification');
+            $table->string('status');
+            $table->string('work_order');
             $table->timestamps();
         });
     }
