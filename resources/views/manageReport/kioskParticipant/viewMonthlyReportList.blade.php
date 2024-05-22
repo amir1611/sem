@@ -226,10 +226,10 @@ use Illuminate\Support\Str;
     var chart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: @json($revenues->pluck('report_month')->toArray()),
+            labels: @json($revenues->pluck('report_month')->map(fn($date) => $date->format('M'))->toArray()),
             datasets: [{
                 label: 'Monthly Revenue',
-                data: [],
+                data: @json($revenues->pluck('report_monthly_revenue')->toArray()),
                 borderColor: 'blue',
                 fill: false
             }]
