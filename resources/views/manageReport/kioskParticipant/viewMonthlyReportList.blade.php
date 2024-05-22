@@ -221,7 +221,7 @@ use Illuminate\Support\Str;
 
 </div>
 
-<script>
+{{-- <script>
     var ctx = document.getElementById('revenueChart').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'line',
@@ -242,8 +242,30 @@ use Illuminate\Support\Str;
             }
         }
     });
-</script>
+</script> --}}
 
+<script>
+    var ctx = document.getElementById('revenueChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: @json($revenues->pluck('report_month')->toArray()),
+            datasets: [{
+                label: 'Monthly Revenue',
+                data: [],
+                borderColor: 'blue',
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
 
 
 
