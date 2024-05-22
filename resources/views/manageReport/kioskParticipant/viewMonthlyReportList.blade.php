@@ -221,29 +221,6 @@ use Illuminate\Support\Str;
 
 </div>
 
-{{-- <script>
-    var ctx = document.getElementById('revenueChart').getContext('2d');
-    var chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: @json($revenues->pluck('report_month')->map(fn($date) => $date->format('M'))->toArray()), // Format month names
-            datasets: [{
-                label: 'Monthly Revenue',
-                data: @json($revenues->pluck('report_monthly_revenue')->toArray()),
-                borderColor: 'blue',
-                fill: false
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-</script> --}}
-
 <script>
     var ctx = document.getElementById('revenueChart').getContext('2d');
     var chart = new Chart(ctx, {
@@ -266,10 +243,6 @@ use Illuminate\Support\Str;
         }
     });
 </script>
-
-
-
-
 
 <script>
     function checkStatus(status) {
