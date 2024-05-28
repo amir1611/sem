@@ -36,7 +36,11 @@
                             <td>{{ $complaint->complaint_justification }}</td>
                             <td>{{ $complaint->work_order }}</td>
                             <td>
-                                <a href="{{ route('user.editComplaint', ['id' => $complaint->id]) }}" class="btn btn-info">Edit</a>
+                                @if ($complaint->status === 'Accepted')
+                                    <button class="btn btn-info" disabled>Edit</button>
+                                @else
+                                    <a href="{{ route('user.editComplaint', ['id' => $complaint->id]) }}" class="btn btn-info">Edit</a>
+                                @endif
                                 <form action="{{ route('user.deleteComplaint', ['id' => $complaint->id]) }}" method="post" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
