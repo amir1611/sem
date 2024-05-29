@@ -54,10 +54,17 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                     
+                        <h4 class="card-title">Add Comments(Optional)</h4>
                         <form method="post"
                             action="{{ route('pupuk.processApplication', ['id' => $application->application_id]) }}">
                             @csrf
+
+                            //ADD APPLICATION COMMENT TEXT BOX
+                            <div class="mb-3">
+                                <label for="application_comment" class="form-label">Comments:</label>
+                                <textarea class="form-control" name="application_comment" id="application_comment" rows="3"></textarea>
+                            </div>
+
                             <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                                 <button type="submit" class="btn btn-success" name="action"
                                     value="approve">Approve</button>

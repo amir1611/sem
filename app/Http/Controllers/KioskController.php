@@ -250,9 +250,15 @@ public function applyKiosk(Request $request)
 
         $application = Applications::findOrFail($id);
 
+        // Validate the request
+        $request->validate([
+            'application_comment' => 'nullable|string',
+        ]);
+
         // Update application status and comment
         $application->update([
             'application_status' => ($request->input('action') === 'approve') ? 'Active' : 'Rejected',
+            'application_comment' => $request->input('application_comment'),
         ]);
 
         if ($request->input('action') === 'approve') {
