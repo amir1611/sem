@@ -137,7 +137,7 @@ public function applyKiosk(Request $request)
         // Save the application
         $application->save();
 
-    
+        return view('manageKiosk.manageApplication.PendingApproval');
     } catch (\Throwable $th) {
         return view('error', [
             'error' => $th->getMessage(),
