@@ -62,9 +62,6 @@ class PaymentController extends Controller
             // Save the payment
             $payment->save();
 
-            // You may add a success message or redirect to a success page
-            return view('managePayment.kioskParticipant.pendingApproval');
-
             } catch (\Throwable $th) {
            // Display error message along with the confirmation message
             return view('error', [
@@ -289,7 +286,7 @@ class PaymentController extends Controller
 
         // Update payment status and comment
         $payment->update([
-            'payment_status' => ($request->input('action') === 'approve') ? 'Approved' : 'Rejected',
+
             'payment_comment' => $request->input('payment_comment'),
         ]);
 
